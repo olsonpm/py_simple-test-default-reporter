@@ -5,7 +5,7 @@ onlyRootTests = o()
 
 onlyRootTests.twoSucceededRootTests = createState(
     succeeded=True,
-    rootTests=[
+    tests=[
         createATest("success 1", succeeded=True),
         createATest("success 2", succeeded=True),
     ],
@@ -13,7 +13,7 @@ onlyRootTests.twoSucceededRootTests = createState(
 
 onlyRootTests.oneFailedOneSucceededRootTests = createState(
     succeeded=False,
-    rootTests=[
+    tests=[
         createATest("success 1", succeeded=True),
         createATest("fail 2", succeeded=False),
     ],

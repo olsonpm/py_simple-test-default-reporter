@@ -32,11 +32,11 @@ suite6.tests = [createATest("test 8", succeeded=True, parentSuite=suite6)]
 rootSuite2.suites.append(suite6)
 
 nestedMess.success = createState(
-    rootTests=[
+    tests=[
         createATest("test 1", succeeded=True),
         createATest("test 2", succeeded=True),
     ],
-    rootSuites=[rootSuite1, rootSuite2],
+    suites=[rootSuite1, rootSuite2],
     succeeded=True,
 )
 
@@ -73,10 +73,10 @@ suite7.tests = [createATest("test 10", succeeded=True, parentSuite=suite7)]
 rootSuite2.suites.append(suite7)
 
 nestedMess.fail = createState(
-    rootTests=[
+    tests=[
         createATest("test 1", succeeded=False),
         createATest("test 2", succeeded=True),
     ],
-    rootSuites=[rootSuite1, rootSuite2],
+    suites=[rootSuite1, rootSuite2],
     succeeded=False,
 )

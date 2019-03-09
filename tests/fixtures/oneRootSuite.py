@@ -11,5 +11,5 @@ failSuite = createRootSuite("suite 1", succeeded=False)
 failTests = createTests("test 1", parentSuite=failSuite, succeeded=False)
 rootFailSuites = [failSuite]
 
-oneRootSuite.success = createState(rootSuites=rootSuccessSuites, succeeded=True)
-oneRootSuite.fail = createState(rootSuites=rootFailSuites, succeeded=False)
+oneRootSuite.success = createState(suites=rootSuccessSuites, succeeded=True)
+oneRootSuite.fail = createState(suites=rootFailSuites, succeeded=False)

@@ -16,8 +16,8 @@ from .initRootState import initRootState
 def report(state, *, showErrorDetails=True):
     state = initRootState(state)
 
-    rootTests = state.rootTests
-    rootSuites = state.rootSuites
+    rootTests = state.tests
+    rootSuites = state.suites
 
     forEach(minimal.reportTest)(rootTests)
 

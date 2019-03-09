@@ -2,10 +2,10 @@ from types import SimpleNamespace as o
 from simple_test_default_reporter.fns import iif, noop
 
 
-def createState(*, succeeded, rootTests=[], rootSuites=[], currentSuite=None):
+def createState(*, succeeded, tests=[], suites=[], currentSuite=None):
     return o(
-        rootTests=rootTests,
-        rootSuites=rootSuites,
+        tests=tests,
+        suites=suites,
         currentSuite=currentSuite,
         succeeded=succeeded,
     )

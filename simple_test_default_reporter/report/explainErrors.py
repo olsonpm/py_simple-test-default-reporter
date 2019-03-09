@@ -22,12 +22,10 @@ separator = twoLineSeps + border + twoLineSeps
 
 
 def explainErrors(state):
-    rootTestsCopy = passThrough(
-        state.rootTests, [discardWhen(didSucceed), copy]
-    )
+    rootTestsCopy = passThrough(state.tests, [discardWhen(didSucceed), copy])
 
     flatTests = passThrough(
-        state.rootSuites,
+        state.suites,
         [discardWhen(didSucceed), reduce(flattenTests, rootTestsCopy)],
     )
 

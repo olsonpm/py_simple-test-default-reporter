@@ -12,8 +12,8 @@ from ...fns import mAssign, discardWhen, map_, set_
 
 
 def removeSucceededTestsInSuites(state):
-    rootSuites = map_(removeSucceededTests)(state.rootSuites)
-    return set_("rootSuites", rootSuites)(state)
+    rootSuites = map_(removeSucceededTests)(state.suites)
+    return set_("suites", rootSuites)(state)
 
 
 # ------- #

@@ -30,17 +30,17 @@ def initRootState(state):
 
 
 def initializeHasBlankLineAfter(state):
-    for suite in state.rootSuites:
+    for suite in state.suites:
         suite.hasBlankLineAfter = False
 
     return state
 
 
 def initializeParentState(state):
-    for suite in state.rootSuites:
+    for suite in state.suites:
         suite.parentState = state
 
-    for test in state.rootTests:
+    for test in state.tests:
         test.parentState = state
 
     return state

@@ -79,7 +79,7 @@ def isLastSiblingSuite(suite):
     if parentSuite:
         siblingSuites = parentSuite.suites
     else:
-        siblingSuites = suite.parentState.rootSuites
+        siblingSuites = suite.parentState.suites
 
     indexOfSuite = siblingSuites.index(suite)
     return isLast(indexOfSuite, siblingSuites)

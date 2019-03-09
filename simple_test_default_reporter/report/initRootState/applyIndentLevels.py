@@ -12,9 +12,9 @@ from ...fns import assign, map_, mAssign, mSet
 
 
 def applyIndentLevels(state):
-    rootTests = map_(addIndentLevelToTest(0))(state.rootTests)
-    rootSuites = map_(addIndentLevelToSuite(0))(state.rootSuites)
-    return assign(o(rootTests=rootTests, rootSuites=rootSuites))(state)
+    rootTests = map_(addIndentLevelToTest(0))(state.tests)
+    rootSuites = map_(addIndentLevelToSuite(0))(state.suites)
+    return assign(o(tests=rootTests, suites=rootSuites))(state)
 
 
 # ------- #
