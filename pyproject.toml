@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simple_test_default_reporter"
-version = "0.2.1"
+version = "0.3.0"
 description = "The default reporter for simple_test"
 authors = ["Philip Olson <philip.olson@pm.me>"]
 license = "WTFNMFPL-1.0"
@@ -18,7 +18,7 @@ python = "^3.7"
 pretty_simple_namespace = "^0.1.0"
 toml = "^0.10.0"
 is_git_repo_clean = "^0.3.4"
-black = {version = "^18.3-alpha.0",allows-prereleases = true}
+black = {version = "^18.3-alpha.0", allows-prereleases = true}
 simple_chalk = "^0.1.0"
 
 [tool.vendorize]

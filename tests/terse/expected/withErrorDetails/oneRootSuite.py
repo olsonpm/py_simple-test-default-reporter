@@ -18,7 +18,7 @@ oneRootSuite.fail = (
         suite: suite 1
         test: test 1
 
-        the error message
+        a formatted exception
 
         {border}
         """

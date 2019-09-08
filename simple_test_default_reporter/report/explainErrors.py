@@ -25,8 +25,7 @@ def explainErrors(state):
     rootTestsCopy = passThrough(state.tests, [discardWhen(didSucceed), copy])
 
     flatTests = passThrough(
-        state.suites,
-        [discardWhen(didSucceed), reduce(flattenTests, rootTestsCopy)],
+        state.suites, [discardWhen(didSucceed), reduce(flattenTests, rootTestsCopy)]
     )
 
     return passThrough(
@@ -47,7 +46,14 @@ def toExplanation(aTest):
 
     explanation.append("test: " + aTest.label)
     explanation.append("")
-    explanation.append(str(aTest.error).strip())
+
+    errorContent = ""
+    if "formattedException" in aTest.__dict__:
+        errorContent = aTest.formattedException
+    else:
+        errorContent = str(aTest.error)
+
+    explanation.append(errorContent.strip())
     return os.linesep.join(explanation)
 
 
@@ -55,9 +61,7 @@ def flattenTests(result, aSuite):
     if hasattr(aSuite, "suites"):
         result = reduce(flattenTests, result)(aSuite.suites)
 
-    return passThrough(
-        aSuite.tests, [discardWhen(didSucceed), mAppendAllTo(result)]
-    )
+    return passThrough(aSuite.tests, [discardWhen(didSucceed), mAppendAllTo(result)])
 
 
 def didSucceed(testOrSuite):
@@ -66,11 +70,5 @@ def didSucceed(testOrSuite):
 
 def wrapInBorder(content):
     return (
-        twoLineSeps
-        + border
-        + twoLineSeps
-        + content
-        + twoLineSeps
-        + border
-        + os.linesep
+        twoLineSeps + border + twoLineSeps + content + twoLineSeps + border + os.linesep
     )
